@@ -7,6 +7,7 @@ var fazTabela = function(){
       $("tr:last").addClass("tentativa");
   }
 }
+var fazTabelaDica = function()
 
 var geraCodigo = function(){
   var senha = []
