@@ -14,7 +14,7 @@ var fazTabelaDica = function(){
       var aLiv = "<tr id='" + i +"'><td><div class='dica'></div></td><td><div class='dica'></div></td><td><div class='dica'></div></td><td><div class='dica'></div></td><div class='dica'></div></td></tr>";
       $(".tabeladica").append(aLiv);
       $("tr:last").addClass("dica");
-  }
+  }}
 
 var geraCodigo = function(){
   var senha = []
