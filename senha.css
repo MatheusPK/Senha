@@ -19,3 +19,10 @@ div.tentativa {
   background: white;
   border: 3px solid red;
 }
+div.divdica{
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: grey;
+  border: 3px solid black;
+}
