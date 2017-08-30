@@ -9,7 +9,7 @@ var fazTabela = function(){
 }
 var fazTabelaDica = function(){
   for (var i = 1; i <= 10; i++) {
-      var aLivre = "<tr id='" + i +"'><td><div class='divdica'></div></td></tr>";
+      var aLivre = "<tr id='" + i +"'><td><div class='divdica'></div><div class='divdica'></div><div class='divdica'></div><div class='divdica'></div></td></tr>";
       $(".tabeladica").append(aLivre);
       $("tr:last").addClass("divdica");
   }
