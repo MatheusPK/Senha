@@ -1,4 +1,4 @@
-var fazTabela = function(){
+var fazTabela = function() {
   var aSecreto = "<tr class = 'codigo'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr>";
   $(".tabela").append(aSecreto);
   for (var i = 1; i <= 10; i++) {
@@ -7,13 +7,11 @@ var fazTabela = function(){
       $("tr:last").addClass("tentativa");
   }
 }
-var fazTabelaDica = function(){
-  for (var i = 1; i <= 10; i++) {
-      var aLivre = "<tr id='" + i +"'><td><div class='divdica'></div><div class='divdica'></div><div class='divdica'></div><div class='divdica'></div></td></tr>";
-      $(".tabeladica").append(aLivre);
-      $("tr:last").addClass("divdica");
+var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"]
+var geraCodigo = function() {
+  var senha = [];
+  for (var i = 0; i <= 3; i++) {
+    senha[i] = cores[Math.floor((Math.random() * 8) + 0)]
   }
-}
-var geraCodigo = function(){
-  var senha = []
+  return senha;
 }
