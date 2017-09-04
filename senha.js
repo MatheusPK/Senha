@@ -2,16 +2,29 @@ var fazTabela = function() {
   var aSecreto = "<tr class = 'codigo'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr>";
   $(".tabela").append(aSecreto);
   for (var i = 1; i <= 10; i++) {
-      var aLivre = "<tr id='" + i +"'><td><div class='tentativa'></div></td><td><div class='tentativa'></div></td><td><div class='tentativa'></div></td><td><div class='tentativa'></div></td><div class='tentativa'></div></td></tr>";
+      var aLivre = "<tr id='" + i +"' class='tentativa'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><div></div></td></tr>";
       $(".tabela").append(aLivre);
       $("tr:last").addClass("tentativa");
   }
 }
-var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"]
-var geraCodigo = function() {
+
+var geraCodigo = function(cores) {
   var senha = [];
   for (var i = 0; i <= 3; i++) {
-    senha[i] = cores[Math.floor((Math.random() * 8) + 0)]
+    senha[i] = cores[Math.floor((Math.random() * 8))];
   }
   return senha;
 }
+
+var marcarCores = function(codigo) {
+    codigo.forEach(function(cor, indice){
+      $(".codigo td").eq(indice).children().css("background", cor);
+    })
+}
+
+$(document).ready(function() {
+  var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"];
+  fazTabela();
+  var senha = geraCodigo(cores);
+  marcarCores(senha);
+})
