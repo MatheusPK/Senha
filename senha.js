@@ -2,9 +2,8 @@ var fazTabela = function() {
   var aSecreto = "<tr class = 'codigo'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr>";
   $(".tabela").append(aSecreto);
   for (var i = 1; i <= 10; i++) {
-      var aLivre = "<tr id='" + i +"' class='tentativa'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><div></div></td></tr>";
+      var aLivre = "<tr id='" + i +"' class = 'tentativa'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><div></div></td><td class = 'dica'><div></div><div></div><div></div><div></div></tr>";
       $(".tabela").append(aLivre);
-      $("tr:last").addClass("tentativa");
   }
 }
 
