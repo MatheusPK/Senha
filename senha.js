@@ -8,11 +8,11 @@ var fazTabela = function() {
 }
 
 var geraCodigo = function(cores) {
-  var senha = [];
+  var codigo = [];
   for (var i = 0; i <= 3; i++) {
-    senha[i] = cores[Math.floor((Math.random() * 8))];
+    codigo[i] = cores[Math.floor((Math.random() * 8))];
   }
-  return senha;
+  return codigo;
 }
 
 var marcarCores = function(codigo) {
@@ -21,9 +21,19 @@ var marcarCores = function(codigo) {
     })
 }
 
+function compara(codigo, tentativa) {
+  var dicas = [];
+  for (var i in tentativa) {
+    if (codigo.indexOf(tentativa[i]) == -1) continue;
+    if (tentativa[i] == codigo[i]) dicas.push('black');
+    else dicas.push('white');
+  }
+  return dicas;
+}
+
 $(document).ready(function() {
   var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"];
   fazTabela();
-  var senha = geraCodigo(cores);
-  marcarCores(senha);
+  var codigo = geraCodigo(cores);
+  marcarCores(codigo);
 })
