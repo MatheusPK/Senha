@@ -12,14 +12,14 @@ div {
   background: blue;
   border: 2px solid black;
 }
-.tentativa div{
+.tentativa div {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   background: beige;
 }
 
-.dica div{
+.dica div {
   display: inline-block;
   border-radius: 50%;
   width: 17px;
