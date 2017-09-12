@@ -5,14 +5,8 @@ tr, td {
   background-color: black;
 }
 
-div {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background: blue;
-  border: 2px solid black;
-}
 .tentativa div {
+  border: 2px solid black;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -20,9 +14,27 @@ div {
 }
 
 .dica div {
-  display: inline-block;
+  border: 2px solid black;
   border-radius: 50%;
+  display: inline-block;
   width: 17px;
   height: 17px;
-  background: white;
+  background: beige;
 }
+
+.codigo div {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+ 
+.selecao div {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: beige;
+}
+
+
