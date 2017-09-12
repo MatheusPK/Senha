@@ -5,6 +5,8 @@ var fazTabela = function() {
       var aLivre = "<tr id='" + i +"' class = 'tentativa'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><div></div></td><td class = 'dica'><div></div><div></div><div></div><div></div></tr>";
       $(".tabela").append(aLivre);
   }
+  var selecao = "<tr class = 'selecao'><td><div onclick = 'mudaCor()'></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr>";
+  $(".tabelaS").append(selecao);
 }
 
 var geraCodigo = function(cores) {
@@ -24,11 +26,16 @@ var marcarCores = function(codigo) {
 function compara(codigo, tentativa) {
   var dicas = [];
   for (var i in tentativa) {
-    if (codigo.indexOf(tentativa[i]) == -1) continue;
+    if (codigo.indexOf(tentativa[i]) == -1) dicas.push('beige');
     if (tentativa[i] == codigo[i]) dicas.push('black');
     else dicas.push('white');
   }
   return dicas;
+}
+
+var mudaCor = function(){
+	var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"];
+	$(this).css("background", "blue");
 }
 
 $(document).ready(function() {
@@ -36,4 +43,5 @@ $(document).ready(function() {
   fazTabela();
   var codigo = geraCodigo(cores);
   marcarCores(codigo);
+  $(".selecao div").click(mudaCor);
 })
