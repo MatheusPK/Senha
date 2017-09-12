@@ -31,6 +31,14 @@ function compara(codigo, tentativa) {
   return dicas;
 }
 
+function confirma(){
+  var tela = [];
+  for(var i = 0; i <= 3;i++){
+    var cor = $('.selecao').css("background-color");
+    tela.push();
+  }
+}
+
 $(document).ready(function() {
   var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"];
   fazTabela();
