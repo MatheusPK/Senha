@@ -33,10 +33,19 @@ function compara(codigo, tentativa) {
   return dicas;
 }
 
+
 var mudaCor = function(){
-	var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"];
-	$(this).css("background", "blue");
+  var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"];
+  $(this).css("background", "blue");
 }
+
+var confirma = function(){
+  var tela = [];
+  for(var i = 0; i <= 3;i++){
+    tela.push($('.selecao td').children().css("background-color"));
+  }
+}
+
 
 $(document).ready(function() {
   var cores = ["red", "blue", "yellow", "purple", "green", "orange", "pink", "grey"];
@@ -44,4 +53,5 @@ $(document).ready(function() {
   var codigo = geraCodigo(cores);
   marcarCores(codigo);
   $(".selecao div").click(mudaCor);
+  $("button").click(confirma);
 })
