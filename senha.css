@@ -1,3 +1,6 @@
+body {
+  background-color: CornflowerBlue;
+}
 tr, td {
   border: 1px solid black;
   width: 50px;
@@ -10,16 +13,16 @@ tr, td {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background: beige;
+  background: CornflowerBlue;
 }
 
-.dica div {
+#dica div {
   border: 2px solid black;
   border-radius: 50%;
   display: inline-block;
   width: 17px;
   height: 17px;
-  background: beige;
+  background: CornflowerBlue;
 }
 
 .codigo div {
@@ -28,13 +31,20 @@ tr, td {
   width: 40px;
   height: 40px;
 }
- 
+
 .selecao div {
   border: 2px solid black;
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background: beige;
+  background: CornflowerBlue;
 }
 
-
+button {
+  position: relative;
+  font-size: 20px;
+  border-radius: 2px;
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ }
