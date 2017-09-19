@@ -31,7 +31,6 @@ tr, td {
   width: 40px;
   height: 40px;
 }
-
 .selecao div {
   border: 2px solid black;
   border-radius: 50%;
@@ -40,11 +39,24 @@ tr, td {
   background: CornflowerBlue;
 }
 
-button {
+.verregras{
+  position: fixed;
+  top:8px;
+  right:20px;
+  border-width: 20px;
+}
+
+.oi{
+  width: 50%;
+  margin: auto;
+}
+.confirma{
   position: relative;
+  display: inline-block;
   font-size: 20px;
   border-radius: 2px;
   background-color: white;
-  border: 2px solid black;
+  border: 2px groove black;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
  }
+
