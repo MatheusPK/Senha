@@ -33,7 +33,7 @@ var compara = function(codigo, tentativa) {
   return dicas;
 }
 
-function comparaArray(arr1, arr2){
+var comparaArray = function(arr1, arr2){
     if (arr1.length !== arr2.length) return false;
     for (var i = 0, len = arr1.length; i < len; i++){
         if (arr1[i] !== arr2[i]){
