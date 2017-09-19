@@ -43,12 +43,18 @@ var comparaArray = function(arr1, arr2){
     return true;
 }
 
-var confirma = function(){
-  contador++;
+var verificaArray = function(array) {
+	if (array.indexOf('rgb(100, 149, 237)') != -1) {
+  		alert('Digite uma senha válida');
+  		return true;
+  };
+
+}
+var confirma = function() {
   var tela = [];
-  for(var i = 0; i <= 3;i++){
-    tela.push($('.selecao div').eq(i).css("background-color"));
-  }
+  for(var i = 0; i <= 3;i++) tela.push($('.selecao div').eq(i).css("background-color"));
+  if(verificaArray(tela)) return;
+  contador++;
   marcarCores("#" + contador + " td div", tela);
   marcarCores("." + contador + " div", compara(senha, tela));
   if (comparaArray(senha, tela)) {
