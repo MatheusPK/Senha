@@ -33,6 +33,16 @@ var compara = function(codigo, tentativa) {
   return dicas;
 }
 
+function comparaArray(arr1, arr2){
+    if (arr1.length !== arr2.length) return false;
+    for (var i = 0, len = arr1.length; i < len; i++){
+        if (arr1[i] !== arr2[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
 var confirma = function(){
   contador++;
   var tela = [];
@@ -41,6 +51,9 @@ var confirma = function(){
   }
   marcarCores("#" + contador + " td div", tela);
   marcarCores("." + contador + " div", compara(senha, tela));
+  if (comparaArray(senha, tela)) {
+    marcarCores(".codigo td div", senha);
+  }
 }
 
 var mudaCor = function(){
@@ -59,7 +72,6 @@ var senha = geraCodigo(cores);
 
 $(document).ready(function() {
   fazTabela();
-  //marcarCores(".codigo td div", senha);
   $(".selecao div").click(mudaCor);
   $("button").click(confirma);
 })
