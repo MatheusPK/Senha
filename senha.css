@@ -8,12 +8,11 @@ tr, td {
   background-color: black;
 }
 
-
 .tentativa div {
   border: 2px solid black;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 90%;
+  height: 90%;
   background: CornflowerBlue;
 }
 
@@ -21,23 +20,23 @@ tr, td {
   border: 2px solid black;
   border-radius: 50%;
   display: inline-block;
-  width: 17px;
-  height: 17px;
+  width: 40%;
+  height: 40%;
   background: CornflowerBlue;
 }
 
 .codigo div {
   border: 2px solid black;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 90%;
+  height: 90%;
 }
 
 .selecao div {
   border: 2px solid black;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 90%;
+  height: 90%;
   background: CornflowerBlue;
 }
 
@@ -70,16 +69,18 @@ tr, td {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
  }
 
-.bolaPreta{
-  display: inline;
-  width: 50px;
-  height: 50px;
+.bolaPreta {
+  border-radius: 50%;
+  width: 30%;
+  height: 50%;
+  background-color: black;
 }
 
-.bolaBranca{
-  display:inline;
-  width: 43px;
-  height: 43px;
+.bolaBranca {
+  border-radius: 50%;
+  width: 30%;
+  height: 50%;
+  background-color: white;
 }
 
 .bolasRegras {
