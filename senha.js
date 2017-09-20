@@ -79,5 +79,9 @@ var senha = geraCodigo(cores);
 $(document).ready(function() {
   fazTabela();
   $(".selecao div").click(mudaCor);
-  $("button").click(confirma);
-})
+  $(".confirma").click(confirma);
+  $(".regras").click(function(){
+    $(".verregras").toggle();
+  });
+});
+
