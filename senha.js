@@ -57,9 +57,7 @@ var confirma = function() {
   contador++;
   marcarCores("#" + contador + " td div", tela);
   marcarCores("." + contador + " div", compara(senha, tela));
-  if (comparaArray(senha, tela)) {
-    marcarCores(".codigo td div", senha);
-  }
+  if(verificaStatus(senha, tela)) return;
 }
 
 var mudaCor = function(){
@@ -68,6 +66,18 @@ var mudaCor = function(){
   contadorCores++;
   if (contadorCores > 8) {
     contadorCores = 0;
+  }
+}
+var verificaStatus = function(senha, tela){
+  if (contador == 10 && comparaArray(senha,tela) == false) {
+    alert("Você perdeu!!!");
+    return true;
+  }
+  if(comparaArray(senha,tela)){
+    alert("Você ganhou!!!");
+    marcarCores(".codigo td div", senha);
+    $(".confirma").off();
+    return true;
   }
 }
 
