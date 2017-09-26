@@ -69,13 +69,14 @@ var mudaCor = function(){
   }
 }
 var verificaStatus = function(senha, tela){
-  if (contador == 10 && comparaArray(senha,tela) == false) {
-    alert("Você perdeu!!!");
-    return true;
-  }
   if(comparaArray(senha,tela)){
     alert("Você ganhou!!!");
     marcarCores(".codigo td div", senha);
+    $(".confirma").off();
+    return true;
+  }
+  if (contador == 10 && comparaArray(senha,tela) == false) {
+    alert("Você perdeu!!!");
     $(".confirma").off();
     return true;
   }
