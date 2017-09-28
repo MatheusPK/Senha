@@ -5,7 +5,7 @@ var fazTabela = function() {
       var aLivre = "<tr id='" + i +"' class = 'tentativa'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td><div></div></td><td id = 'dica' class = '" + i + "'><div></div><div></div><div></div><div></div></tr>";
       $(".tabela").append(aLivre);
   }
-  var selecao = "<tr class = 'selecao'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr>";
+  var selecao = "<tr class = 'selecao'><td><div id = '1c'></div></td><td><div id = '2c'></div></td><td><div id = '3c'></div></td><td><div id = '4c'></div></td></tr>";
   $(".tabelaS").append(selecao);
 }
 
@@ -73,9 +73,9 @@ var confirma = function() {
   verificaStatus(senha, tela);
 }
 
-var mudaCor = function(){
+var mudaCor = function(elem){
   var cores = ["rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(255, 255, 0)", "rgb(128, 0, 128)", "rgb(0, 255, 0)", "rgb(255, 165, 0)", "rgb(255, 192, 203)", "rgb(128, 128, 128)"];
-  $(this).css("background", cores[contadorCores]);
+  $(elem).css("background", cores[contadorCores]);
   contadorCores++;
   if (contadorCores > 8) {
     contadorCores = 0;
@@ -112,7 +112,17 @@ var senha = geraCodigo(cores);
 
 $(document).ready(function() {
   fazTabela();
-  $(".selecao div").click(mudaCor);
+  $(".selecao div").click(function(){
+    mudaCor(this);
+  });
+  $(document).keydown(function(e) {
+    var i;
+    if (e.which == 49) i = 1;
+    if (e.which == 50) i = 2;
+    if (e.which == 51) i = 3;
+    if (e.which == 52) i = 4;
+    mudaCor("#" + i + "c");
+  });
   $(".confirma").click(confirma);
   $(".regras").click(function(){
     $(".pRegras").toggle();
