@@ -30,17 +30,30 @@ var compara = function(codigo, tentativa) {
     else if (tentativa[i] == codigo[i]) dicas.push('rgb(0, 0, 0)');
     else dicas.push('rgb(255, 255, 255)');
   }
-  return dicas;
+  var dicasShuffle = shuffle(dicas);
+  return dicasShuffle;
 }
 
 var comparaArray = function(arr1, arr2){
-    if (arr1.length !== arr2.length) return false;
-    for (var i = 0, len = arr1.length; i < len; i++){
-        if (arr1[i] !== arr2[i]){
-            return false;
-        }
+  if (arr1.length !== arr2.length) return false;
+  for (var i = 0, len = arr1.length; i < len; i++){
+    if (arr1[i] !== arr2[i]){
+      return false;
+      }
     }
     return true;
+}
+
+var shuffle = function(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
 }
 
 var verificaArray = function(array) {
@@ -54,10 +67,10 @@ var confirma = function() {
   var tela = [];
   for(var i = 0; i <= 3;i++) tela.push($('.selecao div').eq(i).css("background-color"));
   if(verificaArray(tela)) return;
-  contador++;
+  contador++
   marcarCores("#" + contador + " td div", tela);
   marcarCores("." + contador + " div", compara(senha, tela));
-  if(verificaStatus(senha, tela)) return;
+  verificaStatus(senha, tela);
 }
 
 var mudaCor = function(){
@@ -68,18 +81,28 @@ var mudaCor = function(){
     contadorCores = 0;
   }
 }
+
 var verificaStatus = function(senha, tela){
-  if(comparaArray(senha,tela)){
-    alert("Você ganhou!!!");
+  if (comparaArray(senha,tela)){
+    setTimeout(alertarGanhou, 100);
     marcarCores(".codigo td div", senha);
     $(".confirma").off();
     return true;
   }
   if (contador == 10 && comparaArray(senha,tela) == false) {
-    alert("Você perdeu!!!");
+    setTimeout(alertarPerdeu, 100);
+    marcarCores(".codigo td div", senha);
     $(".confirma").off();
-    return true;
+    return false;
   }
+}
+
+var alertarGanhou = function(){
+    alert("Você ganhou!!!");
+  }
+
+var alertarPerdeu = function(){
+    alert("Você perdeu!!!");
 }
 
 var contador = 0;
