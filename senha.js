@@ -98,10 +98,12 @@ var verificaStatus = function(senha, tela){
 }
 
 var alertarGanhou = function(){
+    ganhou.play();
     alert("Você ganhou!!!");
   }
 
 var alertarPerdeu = function(){
+    perdeu.play();
     alert("Você perdeu!!!");
 }
 
@@ -109,6 +111,10 @@ var contador = 0;
 var contadorCores = 0;
 var cores = ["rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(255, 255, 0)", "rgb(128, 0, 128)", "rgb(0, 255, 0)", "rgb(255, 165, 0)", "rgb(255, 192, 203)", "rgb(128, 128, 128)"];
 var senha = geraCodigo(cores);
+var ganhou = new Audio();
+ganhou.src = "ganhou.mp3";
+var perdeu = new Audio();
+perdeu.src = "perdeu.mp3"
 
 $(document).ready(function() {
   fazTabela();
