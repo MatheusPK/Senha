@@ -17,7 +17,7 @@ tr, td {
 }
 
 #dica div {
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 50%;
   display: inline-block;
   width: 40%;
