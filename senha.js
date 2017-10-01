@@ -1,3 +1,16 @@
+var elemAtual;
+var contador = 0;
+var count1c = 0;
+var count2c = 0;
+var count3c = 0;
+var count4c = 0;
+var cores = ["rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(255, 255, 0)", "rgb(128, 0, 128)", "rgb(0, 255, 0)", "rgb(255, 165, 0)", "rgb(255, 192, 203)", "rgb(128, 128, 128)"];
+var senha;
+var ganhou = new Audio();
+ganhou.src = "ganhou.mp3";
+var perdeu = new Audio();
+perdeu.src = "perdeu.mp3"
+
 var fazTabela = function() {
   var aSecreto = "<tr class = 'codigo'><td><div></div></td><td><div></div></td><td><div></div></td><td><div></div></td></tr>";
   $(".tabela").append(aSecreto);
@@ -9,7 +22,7 @@ var fazTabela = function() {
   $(".tabelaS").append(selecao);
 }
 
-var geraCodigo = function(cores) {
+var geraCodigo = function() {
   var codigo = [];
   for (var i = 0; i <= 3; i++) {
     codigo[i] = cores[Math.floor((Math.random() * 8))];
@@ -63,6 +76,7 @@ var verificaArray = function(array) {
   };
 
 }
+
 var confirma = function() {
   var tela = [];
   for(var i = 0; i <= 3;i++) tela.push($('.selecao div').eq(i).css("background-color"));
@@ -74,11 +88,27 @@ var confirma = function() {
 }
 
 var mudaCor = function(elem){
-  var cores = ["rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(255, 255, 0)", "rgb(128, 0, 128)", "rgb(0, 255, 0)", "rgb(255, 165, 0)", "rgb(255, 192, 203)", "rgb(128, 128, 128)"];
-  $(elem).css("background", cores[contadorCores]);
-  contadorCores++;
-  if (contadorCores > 8) {
-    contadorCores = 0;
+  switch ($(elem).attr("id")) {
+    case "1c":
+      $(elem).css("background", cores[count1c]);
+      count1c ++;
+      if (count1c >= 8) count1c = 0;
+      break;
+    case "2c":
+        $(elem).css("background", cores[count2c]);
+        count2c ++;
+        if (count2c >= 8) count2c = 0;
+        break;
+    case "3c":
+          $(elem).css("background", cores[count3c]);
+          count3c ++;
+          if (count3c >= 8) count3c = 0;
+          break;
+    case "4c":
+            $(elem).css("background", cores[count4c]);
+            count4c ++;
+            if (count4c >= 8) count4c = 0;
+            break;
   }
 }
 
@@ -107,17 +137,9 @@ var alertarPerdeu = function(){
     alert("Você perdeu!!!");
 }
 
-var contador = 0;
-var contadorCores = 0;
-var cores = ["rgb(255, 0, 0)", "rgb(0, 0, 255)", "rgb(255, 255, 0)", "rgb(128, 0, 128)", "rgb(0, 255, 0)", "rgb(255, 165, 0)", "rgb(255, 192, 203)", "rgb(128, 128, 128)"];
-var senha = geraCodigo(cores);
-var ganhou = new Audio();
-ganhou.src = "ganhou.mp3";
-var perdeu = new Audio();
-perdeu.src = "perdeu.mp3"
-
 $(document).ready(function() {
   fazTabela();
+  senha = geraCodigo();
   $(".selecao div").click(function(){
     mudaCor(this);
   });
