@@ -137,6 +137,14 @@ var alertarPerdeu = function(){
     alert("Você perdeu!!!");
 }
 
+function confirma(){
+  var tela = [];
+  for(var i = 0; i <= 3;i++){
+    var cor = $('.selecao').css("background-color");
+    tela.push();
+  }
+}
+
 $(document).ready(function() {
   fazTabela();
   senha = geraCodigo();
