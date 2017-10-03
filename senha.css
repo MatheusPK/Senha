@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(200, 161, 101);
+  background-color: rgb(255, 153, 102);
 }
 tr, td {
   border: 1px solid black;
@@ -17,7 +17,7 @@ tr, td {
 }
 
 #dica div {
-  border: 1px solid white;
+  border: 0.5px solid rgb(102, 102, 102);
   border-radius: 50%;
   display: inline-block;
   width: 40%;
@@ -85,15 +85,15 @@ tr, td {
 
 .bolasRegras {
   border: 0px;
-  background-color: rgb(200, 161, 101);
+  background-color: rgb(255, 153, 102);
 }
 
 .tdBolaRegras {
   border: 0px;
-  background-color: rgb(200, 161, 101);
+  background-color: rgb(255, 153, 102);
 }
 
 .trBolaregras {
   border: 0px;
-  background-color: rgb(200, 161, 101);
+  background-color: rgb(255, 153, 102);
 }
